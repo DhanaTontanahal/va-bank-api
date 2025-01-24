@@ -21,7 +21,7 @@ RUN wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O /cloud_sq
 EXPOSE 8080
 
 # Set environment variables for Cloud SQL Proxy (replace placeholders)
-ENV INSTANCE_CONNECTION_NAME="voltaic-battery-447511-p5:us-central1:menu-logger-db"
+ENV INSTANCE_CONNECTION_NAME="voltaic-battery-447511:us-central1:menu-logger-db"
 ENV DB_USER="root"
 ENV DB_PASS="yourpassword"
 ENV DB_NAME="menu-logger-db"
