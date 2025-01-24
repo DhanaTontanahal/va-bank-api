@@ -7,6 +7,9 @@ const port = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", async (req, res) => {
+  res.json({ status: "Bark bark" });
+});
 // Endpoint to get account balance based on email
 app.get("/api/account-balance", (req, res) => {
   console.log("here");
