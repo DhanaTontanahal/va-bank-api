@@ -26,5 +26,5 @@ ENV DB_USER="root"
 ENV DB_PASS="yourpassword"
 ENV DB_NAME="voltaic-battery-447511-p5:us-central1:menu-logger-db"
 
-# Start the application, ensuring it listens on the PORT environment variable
-CMD ["node", "index.js"]
+# Start the Cloud SQL Auth Proxy and the Node.js application
+CMD ["sh", "-c", "/cloud_sql_proxy -instances=$INSTANCE_CONNECTION_NAME=tcp:3306 & node index.js"]
