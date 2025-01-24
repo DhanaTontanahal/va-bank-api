@@ -24,7 +24,7 @@ EXPOSE 8080
 ENV INSTANCE_CONNECTION_NAME="voltaic-battery-447511-p5:us-central1:menu-logger-db"
 ENV DB_USER="root"
 ENV DB_PASS="yourpassword"
-ENV DB_NAME="voltaic-battery-447511-p5:us-central1:menu-logger-db"
+ENV DB_NAME="menu-logger-db"
 
 # Start the Cloud SQL Auth Proxy and the Node.js application
 CMD ["sh", "-c", "/cloud_sql_proxy -instances=$INSTANCE_CONNECTION_NAME=tcp:3306 & node index.js"]
