@@ -14,8 +14,7 @@ RUN npm install
 COPY . .
 
 # Install the Cloud SQL Auth Proxy
-RUN wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O /cloud_sql_proxy && \
-    chmod +x /cloud_sql_proxy
+RUN wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O /cloud_sql_proxy && chmod +x /cloud_sql_proxy
 
 # Expose the port Cloud Run will use (this is just for documentation purposes, not functional in production)
 EXPOSE 8080
