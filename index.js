@@ -150,10 +150,10 @@ function getApplicationStatus(applicationId) {
 // });
 
 const db = mysql.createConnection({
-  host: "34.27.146.202",
+  host: "34.41.13.51",
   user: "root", // Replace with your DB username
   password: "yourpassword", // Replace with your DB password
-  database: "menu_logger", // Replace with your DB name
+  database: "menu_logger_db", // Replace with your DB name
   port: 3306,
 });
 
