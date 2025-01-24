@@ -13,8 +13,18 @@ RUN npm install
 # Copy the application code
 COPY . .
 
+# Install the Cloud SQL Auth Proxy
+RUN wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O /cloud_sql_proxy && \
+    chmod +x /cloud_sql_proxy
+
 # Expose the port Cloud Run will use (this is just for documentation purposes, not functional in production)
 EXPOSE 8080
+
+# Set environment variables for Cloud SQL Proxy (replace placeholders)
+ENV INSTANCE_CONNECTION_NAME="voltaic-battery-447511-p5:us-central1-c:menu-logger-db"
+ENV DB_USER="root"
+ENV DB_PASS="yourpassword"
+ENV DB_NAME="voltaic-battery-447511-p5:us-central1:menu-logger-db"
 
 # Start the application, ensuring it listens on the PORT environment variable
 CMD ["node", "index.js"]
